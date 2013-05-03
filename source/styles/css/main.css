@@ -1,0 +1,132 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tile {
+  position: absolute;
+  display: none;
+  -webkit-perspective: 300px;
+  -moz-perspective: 300px;
+  -ms-perspective: 300px;
+  -o-perspective: 300px;
+  perspective: 300px;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+.tile.from-top {
+  display: block;
+  -webkit-perspective-origin: 50% 0;
+  -moz-perspective-origin: 50% 0;
+  -ms-perspective-origin: 50% 0;
+  -o-perspective-origin: 50% 0;
+  perspective-origin: 50% 0;
+}
+.tile.from-top .inlay {
+  -webkit-transform-origin: 50% 0 0;
+  -moz-transform-origin: 50% 0 0;
+  -ms-transform-origin: 50% 0 0;
+  -o-transform-origin: 50% 0 0;
+  transform-origin: 50% 0 0;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  -ms-transform: rotateX(-90deg);
+  -o-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+}
+.tile.from-bottom {
+  display: block;
+  -webkit-perspective-origin: 50% 100%;
+  -moz-perspective-origin: 50% 100%;
+  -ms-perspective-origin: 50% 100%;
+  -o-perspective-origin: 50% 100%;
+  perspective-origin: 50% 100%;
+}
+.tile.from-bottom .inlay {
+  -webkit-transform-origin: 50% 100% 0;
+  -moz-transform-origin: 50% 100% 0;
+  -ms-transform-origin: 50% 100% 0;
+  -o-transform-origin: 50% 100% 0;
+  transform-origin: 50% 100% 0;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  -ms-transform: rotateX(90deg);
+  -o-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+.tile.from-left {
+  display: block;
+  -webkit-perspective-origin: 0 50%;
+  -moz-perspective-origin: 0 50%;
+  -ms-perspective-origin: 0 50%;
+  -o-perspective-origin: 0 50%;
+  perspective-origin: 0 50%;
+}
+.tile.from-left .inlay {
+  -webkit-transform-origin: 0 50% 0;
+  -moz-transform-origin: 0 50% 0;
+  -ms-transform-origin: 0 50% 0;
+  -o-transform-origin: 0 50% 0;
+  transform-origin: 0 50% 0;
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+}
+.tile.from-right {
+  display: block;
+  -webkit-perspective-origin: 100% 50%;
+  -moz-perspective-origin: 100% 50%;
+  -ms-perspective-origin: 100% 50%;
+  -o-perspective-origin: 100% 50%;
+  perspective-origin: 100% 50%;
+}
+.tile.from-right .inlay {
+  -webkit-transform-origin: 100% 50% 0;
+  -moz-transform-origin: 100% 50% 0;
+  -ms-transform-origin: 100% 50% 0;
+  -o-transform-origin: 100% 50% 0;
+  transform-origin: 100% 50% 0;
+  -webkit-transform: rotateY(-90deg);
+  -moz-transform: rotateY(-90deg);
+  -ms-transform: rotateY(-90deg);
+  -o-transform: rotateY(-90deg);
+  transform: rotateY(-90deg);
+}
+
+.inlay {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.tile .inlay.show {
+  -webkit-transform: rotateX(0) rotateY(0);
+  -moz-transform: rotateX(0) rotateY(0);
+  -ms-transform: rotateX(0) rotateY(0);
+  -o-transform: rotateX(0) rotateY(0);
+  transform: rotateX(0) rotateY(0);
+}
+.tile .inlay.show .cover {
+  background-color: rgba(0, 0, 0, 0);
+}

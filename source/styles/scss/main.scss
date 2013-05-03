@@ -1,0 +1,96 @@
+@import "compass";
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+$default-origin-z: 0;
+
+.tile {
+	position: absolute;
+	display: none;
+
+	@include perspective( 300px );
+	@include transform-style( preserve-3d );
+
+	&.from-top {
+		display: block;
+
+		@include perspective-origin( 50% 0 );
+
+		.inlay {
+
+			@include transform-origin( 50%, 0, 0 );
+			@include transform( rotateX( -90deg ) );
+		}
+
+	}
+
+	&.from-bottom {
+		display: block;
+
+		@include perspective-origin( 50% 100% );
+
+		.inlay {
+
+			@include transform-origin( 50%, 100%, 0 );
+			@include transform( rotateX( 90deg ) );
+		}
+
+	}
+
+	&.from-left {
+		display: block;
+
+		@include perspective-origin( 0 50% );
+
+		.inlay {
+
+			@include transform-origin( 0, 50%, 0 );
+			@include transform( rotateY( 90deg ) );
+
+		}
+
+	}
+
+	&.from-right {
+		display: block;
+
+		@include perspective-origin( 100% 50% );
+
+		.inlay {
+
+			@include transform-origin( 100%, 50%, 0 );
+			@include transform( rotateY( -90deg ) );
+
+		}
+
+	}
+}
+
+.inlay {
+	width: 100%;
+	height: 100%;
+
+	@include single-transition( all, 0.3s, ease-in-out );
+}
+
+.cover {
+	width: 100%;
+	height: 100%;
+	background-color: rgba( 0, 0, 0, 0.4 );
+
+	@include single-transition( background-color, 0.3s, ease-in-out );
+}
+
+.tile .inlay.show {
+	@include transform( rotateX( 0 ) rotateY( 0 ) );
+
+	.cover {
+		background-color: rgba( 0, 0, 0, 0 );
+	}
+}

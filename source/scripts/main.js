@@ -12,8 +12,25 @@ require.config( {
 require( [ "spread/Controller" ], function( Flip ) {
 
 	var container = document.getElementById( "container" );
+	var tag = document.getElementById( "tag" );
 
-	document.addEventListener( "click", onClick );
+	initListeners();
+	setTag();
+
+	function setTag() {
+		tag.className = "before in";
+
+		setTimeout( function() {
+			tag.className = "";
+		}, 300 );
+	}
+
+	function initListeners() {
+
+		document.addEventListener( "click", onClick, false );
+		document.addEventListener( "touchstart", onTouchEnd, false );
+
+	}
 
 	function onClick( event ) {
 
@@ -40,6 +57,16 @@ require( [ "spread/Controller" ], function( Flip ) {
 
 		container.appendChild( div );
 
+	}
+
+	function onTouchEnd( event ) {
+
+		var touch = event.touches[ 0 ];
+
+		event.pageX = touch.pageX;
+		event.pageY = touch.pageY;
+
+		onClick( event );
 	}
 
 } );

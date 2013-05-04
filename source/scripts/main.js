@@ -9,7 +9,7 @@ require.config( {
 
 } );
 
-require( [ "flip/Flip" ], function( Flip ) {
+require( [ "spread/Controller" ], function( Flip ) {
 
 	var container = document.getElementById( "container" );
 

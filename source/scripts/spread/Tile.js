@@ -1,8 +1,8 @@
 define( [
 
-	"flip/config/options",
-	"flip/config/orientation",
-	"flip/utils/random"
+	"spread/config/options",
+	"spread/config/orientation",
+	"spread/utils/random"
 
 ], function( options, orientation, random ) {
 

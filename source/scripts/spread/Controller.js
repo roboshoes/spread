@@ -1,9 +1,9 @@
 define( [
 
-	"flip/config/options",
-	"flip/config/orientation",
-	"flip/utils/color",
-	"flip/Tile"
+	"spread/config/options",
+	"spread/config/orientation",
+	"spread/utils/color",
+	"spread/Tile"
 
 ], function( options, orientation, color, Tile ) {
 

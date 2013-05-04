@@ -9,7 +9,7 @@ require.config( {
 
 } );
 
-require( [ "spread/Controller" ], function( Flip ) {
+require( [ "spread/Controller" ], function( Controller ) {
 
 	var container = document.getElementById( "container" );
 	var tag = document.getElementById( "tag" );
@@ -46,11 +46,11 @@ require( [ "spread/Controller" ], function( Flip ) {
 			y: event.pageY
 		}
 
-		var flip = new Flip( div, size, position );
+		var controller = new Controller( div, size, position );
 
-		flip.onComplete( function() {
+		controller.onComplete( function() {
 
-			document.body.style.backgroundColor = flip.getColor();
+			document.body.style.backgroundColor = controller.getColor();
 			container.removeChild( div );
 
 		} );
